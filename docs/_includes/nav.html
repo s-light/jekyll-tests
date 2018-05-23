@@ -15,10 +15,12 @@
     {% assign stack__next_urlpart = "" | split: ", " %}
     {% assign stack__this_level = "" | split: ", " %}
     {% assign stack__start_level = "" | split: ", " %}
+    {% assign stack__page_list_start_index = "" | split: ", " %}
     {%
         include nav_list.html
         page_list=pages_sorted
         start_level=0
+        page_list_start_index=0
     %}
 
 
