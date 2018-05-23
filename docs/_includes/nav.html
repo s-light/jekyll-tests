@@ -2,19 +2,27 @@
     <h3>navigation</h3>
     {% assign pages_sorted = site.pages | sort: 'url' %}
 
-    <div>
-        {% for page_entry in pages_sorted %}
-            {% if page_entry.title %}
-                {{ page_entry.url }} <br>
-            {% endif %}
-        {% endfor %}
+    <div style="position:fixed; top:0; right:0; width:300px;">
+        <div style="background-color:rgba(0,0,255,0.04); padding:0.5em 1em;">
+            {% for page_entry in pages_sorted %}
+                {{forloop.index0}} - {{ page_entry.url }} <br>
+            {% endfor %}
+        </div>
+        <div style="background-color:rgba(0,0,255,0.1); padding:0.5em 1em;">
+            {% for page_entry in pages_sorted %}
+                {% if page_entry.title %}
+                    {{forloop.index0}} - {{ page_entry.url }} <br>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 
 
     {% assign stack__old_urlpart = "" | split: ", " %}
-    {% assign stack__next_urlpart = "" | split: ", " %}
+    {% assign stack__next_level_urlpart = "" | split: ", " %}
     {% assign stack__this_level = "" | split: ", " %}
     {% assign stack__start_level = "" | split: ", " %}
+    {% assign stack__list_index_current = "" | split: ", " %}
     {% assign stack__page_list_start_index = "" | split: ", " %}
     {%
         include nav_list.html

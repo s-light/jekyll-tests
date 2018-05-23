@@ -195,9 +195,107 @@
 
 
 
+{% comment %}
+    increment list_index_current
+    math: + 1
+{% endcomment %}
+{% assign temp = nil %}
+{% case list_index_current %}
+  {% when 0 %}
+    {% assign temp = 1 %}
+  {% when 1 %}
+    {% assign temp = 2 %}
+  {% when 2 %}
+    {% assign temp = 3 %}
+  {% when 3 %}
+    {% assign temp = 4 %}
+  {% when 4 %}
+    {% assign temp = 5 %}
+  {% when 5 %}
+    {% assign temp = 6 %}
+  {% when 6 %}
+    {% assign temp = 7 %}
+  {% when 7 %}
+    {% assign temp = 8 %}
+  {% when 8 %}
+    {% assign temp = 9 %}
+  {% when 9 %}
+    {% assign temp = 10 %}
+  {% when 10 %}
+    {% assign temp = 11 %}
+  {% when 11 %}
+    {% assign temp = 12 %}
+  {% when 12 %}
+    {% assign temp = 13 %}
+  {% when 13 %}
+    {% assign temp = 14 %}
+  {% when 14 %}
+    {% assign temp = 15 %}
+  {% when 15 %}
+    {% assign temp = 16 %}
+  {% when 16 %}
+    {% assign temp = 17 %}
+  {% when 17 %}
+    {% assign temp = 18 %}
+  {% when 18 %}
+    {% assign temp = 19 %}
+  {% when 19 %}
+    {% assign temp = 20 %}
+{% endcase %}
+{% assign list_index_current = temp %}
 
 
 
+
+
+
+{% comment %}
+    next_sub_level = this_level + 1
+{% endcomment %}
+{% assign temp = nil %}
+{% case this_level %}
+  {% when 0 %}
+    {% assign temp = 1 %}
+  {% when 1 %}
+    {% assign temp = 2 %}
+  {% when 2 %}
+    {% assign temp = 3 %}
+  {% when 3 %}
+    {% assign temp = 4 %}
+  {% when 4 %}
+    {% assign temp = 5 %}
+  {% when 5 %}
+    {% assign temp = 6 %}
+  {% when 6 %}
+    {% assign temp = 7 %}
+  {% when 7 %}
+    {% assign temp = 8 %}
+  {% when 8 %}
+    {% assign temp = 9 %}
+  {% when 9 %}
+    {% assign temp = 10 %}
+  {% when 10 %}
+    {% assign temp = 11 %}
+  {% when 11 %}
+    {% assign temp = 12 %}
+  {% when 12 %}
+    {% assign temp = 13 %}
+  {% when 13 %}
+    {% assign temp = 14 %}
+  {% when 14 %}
+    {% assign temp = 15 %}
+  {% when 15 %}
+    {% assign temp = 16 %}
+  {% when 16 %}
+    {% assign temp = 17 %}
+  {% when 17 %}
+    {% assign temp = 18 %}
+  {% when 18 %}
+    {% assign temp = 19 %}
+  {% when 19 %}
+    {% assign temp = 20 %}
+{% endcase %}
+{% assign next_sub_level = temp %}
 
 
 
