@@ -24,11 +24,13 @@
     {% assign stack__start_level = "" | split: ", " %}
     {% assign stack__list_index_current = "" | split: ", " %}
     {% assign stack__page_list_start_index = "" | split: ", " %}
+    {% assign list_skip_up_to_index = 0 %}
     {%
         include nav_list.html
         page_list=pages_sorted
         start_level=0
         page_list_start_index=0
+        old_urlpart = '/'
     %}
 
 
