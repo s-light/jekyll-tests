@@ -5,18 +5,21 @@
 {% endcomment %}
 
 
+{% assign debug_out = false %}
+
 
 {% assign page_list=include.page_list%}
 {% assign start_level=include.start_level%}
 {% assign page_list_start_index=include.page_list_start_index%}
 {% assign old_urlpart = '/' %}
 
-
+{% if debug_out %}
 <div style="background-color:rgba(0,255,255,0.5);">
     start_level {{ start_level | inspect }} <br>
     page_list_start_index {{ page_list_start_index | inspect }} <br>
     old_urlpart : {{ old_urlpart | inspect }}
 </div>
+{% endif %}
 
 {% assign list_index_current = page_list_start_index %}
 <ul>
@@ -117,7 +120,7 @@
 
 
 
-
+        {% if debug_out %}
         <div>
             <br>
             url {{ this_url_parts | inspect }}<br>
@@ -127,6 +130,7 @@
             page_entry.url: {{ page_entry.url | inspect }}<br>
             {% endcomment %}
         </div>
+        {% endif %}
 
 
 
@@ -140,9 +144,11 @@
         {% assign next_level = nil %}
         {% assign list_index_next = list_index_current %}
 
+        {% if debug_out %}
         <div style="background-color:rgba(0,255,0,0.5);">
             list_index_next {{ list_index_next | inspect }} <br>
         </div>
+        {% endif %}
 
         {% for page_entry_next in page_list offset:list_index_next %}
             {% if page_entry_next.title %}
@@ -198,11 +204,14 @@
         {% endfor %}
 
         {% assign next_level_urlpart = next_url_parts[this_level] %}
+
+        {% if debug_out %}
         <div style="background-color:rgba(255,200,0,0.2);">
             url {{ next_url_parts | inspect }}<br>
             next_level {{ next_level | inspect }} /
             u {{ next_level_urlpart | inspect }}
         </div>
+        {% endif %}
 
         {% comment %}
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -265,7 +274,9 @@
 
 
         {% if this_level == start_level %}
-            FINE
+            {% if debug_out %}
+            <div> IF 1 </div>
+            {% endif %}
             <li
                 {% if page.url == page_entry.url %}class="current"{% endif %}
             >
@@ -276,13 +287,19 @@
             and
             this_level_urlpart == next_level_urlpart
         %}
+            {% if debug_out %}
+            <div> IF 2 </div>
+            {% endif %}
             {% assign old_urlpart = this_level_urlpart %}
             <li class="sub">
-                <a href="{{ page_entry.url }}">{{ page_entry.title }}</a><br>
-                ****
+                <a href="{{ page_entry.url }}">{{ page_entry.title }}</a>
                 {% assign next_sub_level = this_level %}
 
-                next_sub_level: {{ next_sub_level | inspect }}<br>
+                {% if debug_out %}
+                <div>
+                    next_sub_level: {{ next_sub_level | inspect }}<br>
+                </div>
+                {% endif %}
                 {% assign stack__old_urlpart = stack__old_urlpart | push: this_level_urlpart %}
                 {% assign stack__next_level_urlpart = stack__next_level_urlpart | push: next_level_urlpart %}
                 {% assign stack__this_level = stack__this_level | push: this_level %}
@@ -313,6 +330,9 @@
 
             </li>
         {% elsif this_level < start_level %}
+            {% if debug_out %}
+            <div> IF 3 </div>
+            {% endif %}
             {% break %}
         {% endif %}
 
