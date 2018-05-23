@@ -1,0 +1,63 @@
+<nav>
+    <h3>navigation</h3>
+    {% assign pages_sorted = site.pages | sort: 'url' %}
+
+    {% comment %}
+    this should also work: ???
+    ### navigation
+    {% endcomment %}
+
+    {% comment %}
+
+    this does not work :-)
+
+    {% endcomment %}
+    {% assign stack__old_urlpart = "" | split: ", " %}
+    {% assign stack__this_depth = "" | split: ", " %}
+    {% assign stack__start_depth = "" | split: ", " %}
+    {%
+        include nav_list.html
+        page_list=pages_sorted
+        start_depth=2
+    %}
+
+    {% comment %}
+    <div>
+        {% assign test = "" | split: ", " %}
+        {{ test | inspect }}
+    </div>
+    <div>
+        {% assign test = test | push: "hello" %}
+        {{ test | inspect }}
+    </div>
+    <div>
+        {% assign test = test | push: "world" %}
+        {{ test | inspect }}
+    </div>
+    <div>
+        {% assign test = test | push: "Sun" %}
+        {{ test | inspect }}
+    </div>
+    <div>
+        {% assign test2 = test | pop %}
+        {{ test2 | inspect }}
+    </div>
+    {% endcomment %}
+
+    {% comment %}
+    <ul>
+    {% for page_entry in pages_sorted %}
+        {% if page_entry.title %}
+            <li
+                {% if page.url == page_entry.url %}class="current"{% endif %}
+            >
+                <a href="{{ page_entry.url }}">{{ page_entry.title }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    {% endcomment %}
+
+
+
+</nav>
