@@ -1,0 +1,122 @@
+<nav>
+    <h3>navigation</h3>
+    {% assign pages_sorted = site.pages | sort: 'url' %}
+
+    {% comment %}
+    this should also work: ???
+    ### navigation
+    {% endcomment %}
+
+
+    {% comment %}
+    <div>
+        {% assign test = "" | split: ", " %}
+        {{ test | inspect }}
+    </div>
+    <div>
+        {% assign test = test | push: "hello" %}
+        {{ test | inspect }}
+    </div>
+    <div>
+        {% assign test = test | push: "world" %}
+        {{ test | inspect }}
+    </div>
+    <div>
+        {% assign test = test | push: "Sun" %}
+        {{ test | inspect }}
+    </div>
+    <div>
+        {% assign test2 = test | pop %}
+        {{ test2 | inspect }}
+    </div>
+    {% endcomment %}
+
+    {% comment %}
+    <ul>
+    {% for page_entry in pages_sorted %}
+        {% if page_entry.title %}
+            <li
+                {% if page.url == page_entry.url %}class="current"{% endif %}
+            >
+                <a href="{{ page_entry.url }}">{{ page_entry.title }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    {% endcomment %}
+
+</nav>
+
+
+
+
+
+
+
+{% comment %}
+{% if start_depth == 0 and page_entry.url == '/' %}
+    <li
+        {% if page.url == page_entry.url %}class="current"{% endif %}
+    >
+        <a href="{{ page_entry.url }}">{{ page_entry.title }}</a>
+    </li>
+{% elsif this_depth == start_depth %}
+    <li
+        {% if page.url == page_entry.url %}class="current"{% endif %}
+    >
+        <a href="{{ page_entry.url }}">{{ page_entry.title }}</a>
+    </li>
+{% elsif this_depth > start_depth and old_urlpart != this_depth_urlpart %}
+{% endcomment %}
+
+
+
+
+
+
+
+
+
+
+<!-- {% comment %}
+    math: - 1
+{% case this_level %}
+  {% when 1 %}
+    {% assign temp = 0 %}
+  {% when 2 %}
+    {% assign temp = 1 %}
+  {% when 3 %}
+    {% assign temp = 2 %}
+  {% when 4 %}
+    {% assign temp = 3 %}
+  {% when 5 %}
+    {% assign temp = 4 %}
+{% endcase %}
+{% assign this_level_urlpart = this_url_parts[temp] %}
+{% endcomment %} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}
+We have something like this:
+    "/ideas/"
+    "/ideas/POV/"
+    "/ideas/POV/POV_3D/"
+    "/ideas/POV/pov_datatransmission.html"
+    "/ideas/POV/pov_motor.html"
+    "/ideas/POV/pov_powertransmission.html"
+    "/meta.html"
+---
+
+first we create a array of arrays:
+{% endcomment %}

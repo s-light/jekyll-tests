@@ -1,5 +1,5 @@
-<!--lint disable list-item-indent-->
 # Documentation example
+<!--lint disable list-item-indent-->
 
 ## Current State
 currently this project is in the early creation phase.
