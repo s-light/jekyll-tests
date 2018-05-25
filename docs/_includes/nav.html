@@ -2,7 +2,7 @@
     <h3>navigation</h3>
     {% assign pages_sorted = site.pages | sort: 'url' %}
 
-    <div style="position:fixed; top:0; right:0; width:300px;">
+    <div style="position:fixed; top:0; right:0; width:280px;">
         <div style="background-color:rgba(0,0,255,0.04); padding:0.5em 1em;">
             {% for page_entry in pages_sorted %}
                 {{forloop.index0}} - {{ page_entry.url }} <br>
@@ -14,6 +14,23 @@
                     {{forloop.index0}} - {{ page_entry.url }} <br>
                 {% endif %}
             {% endfor %}
+        </div>
+        <div style="background-color:rgba(0,0,255,0.1); padding:0.5em 1em;">
+            0 - / <br>
+            3 - /blubber.html <br>
+            4 - /ideas/ <br>
+            ____5 - /ideas/Hello/ <br>
+            ________6 - /ideas/Hello/morecontent.html <br>
+            ____7 - /ideas/POV/ <br>
+            ________8 - /ideas/POV/3D/ <br>
+            ________9 - /ideas/POV/data.html <br>
+            ________10 - /ideas/POV/motor.html <br>
+            ____11 - /ideas/SUN/ <br>
+            ____12 - /ideas/test1.html <br>
+            ____13 - /ideas/test2.html <br>
+            14 - /meta.html <br>
+            17 - /usage/ <br>
+            ____18 - /usage/utest1.html <br>
         </div>
     </div>
 

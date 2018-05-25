@@ -235,24 +235,38 @@
         ******************************************
 
         We have something like this:
-            /
-            /blubber.html
-            /ideas/
-            /ideas/test1.html
-            /ideas/test2.html
-            /meta.html
-            /usage/
-            /usage/utest1.html
+        0 - /
+        3 - /blubber.html
+        4 - /ideas/
+        5 - /ideas/Hello/
+        6 - /ideas/Hello/morecontent.html
+        7 - /ideas/POV/
+        8 - /ideas/POV/3D/
+        9 - /ideas/POV/data.html
+        10 - /ideas/POV/motor.html
+        11 - /ideas/SUN/
+        12 - /ideas/test1.html
+        13 - /ideas/test2.html
+        14 - /meta.html
+        17 - /usage/
+        18 - /usage/utest1.html
 
         target is this:
-            /
-            /blubber.html
-            /ideas/
-                /ideas/test1.html
-                /ideas/test2.html
-            /meta.html
-            /usage/
-                /usage/utest1.html
+        0 - /
+        3 - /blubber.html
+        4 - /ideas/
+            5 - /ideas/Hello/
+                6 - /ideas/Hello/morecontent.html
+            7 - /ideas/POV/
+                8 - /ideas/POV/3D/
+                9 - /ideas/POV/data.html
+                10 - /ideas/POV/motor.html
+            11 - /ideas/SUN/
+            12 - /ideas/test1.html
+            13 - /ideas/test2.html
+        14 - /meta.html
+        17 - /usage/
+            18 - /usage/utest1.html
 
 
         what options are there ?
