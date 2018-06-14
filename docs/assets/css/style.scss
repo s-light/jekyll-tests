@@ -7,14 +7,103 @@
 
 // base layout modifications
 
-.inner {
-	width: 1400px;
-	margin-left: 7em;
+// create a 1 column multi row flex design
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+body > header {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+body > section {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+
+	padding-top: 30px;
+	border-top: solid 1px #fff;
+}
+
+// insied of the header
+// create a 2 column flex design
+
+body > header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+body > header > section {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    // background-color: rgba(255, 255, 0, 0.5);
+}
+
+// overwrite
+header h2 {
+	width: auto;
+}
+
+header a.button {
+    position: relative;
+	display: block;
+    // margin-left: 2em;
+}
+
+
+// insied of the main section
+// create a 2 column flex design
+
+body > section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+body > section > section {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+body > section > aside {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+
+    position: sticky;
+    top: 1em;
+    min-width: 12em;
+}
+
+// overwrite
+#main-content {
+	float: none;
+	width: auto;
+    max-width: 70em;
+	margin-right: 2em;
 }
 
 aside#sidebar {
-    width: 450px;
+    width: auto;
 }
+
+
 
 // navigation
 
@@ -28,24 +117,103 @@ aside#sidebar {
 // 	background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
 // }
 
-ul {
-    padding-left: 40px;
-}
-
 nav li.current {
     font-weight: bold;
     list-style-type: circle;
 }
 
+
 li.sub ul {
 	margin-bottom: 0;
 }
 
-// li {
-// 	margin-bottom: 0.5em;
-// }
 
-// specials
+
+// text
+#main-content p {
+    max-width: 60em;
+}
+
+
+// table
+td, th {
+	padding: 0.1em 0.5em;
+}
+
+// input type="number"
+
+input[type="number"] {
+	width: 5em;
+    position: relative;
+}
+
+// units
+label.unit::after {
+    content: " ";
+    margin-left: -50px;
+    position: absolute;
+}
+
+span.unit::after {
+    content: "&nbsp;";
+    margin-left: 0.2em;
+}
+
+// currency
+.unit.euro::after {
+    content: "€";
+}
+
+// seconds
+.unit.seconds::after {
+    content: "s";
+}
+.unit.milliseconds::after {
+    content: "ms";
+}
+.unit.microseconds::after {
+    content: "us";
+}
+.unit.nanoseconds::after {
+    content: "ns";
+}
+.unit.picoseconds::after {
+    content: "ps";
+}
+
+// meter
+.unit.meter::after {
+    content: "m";
+}
+.unit.millimeter::after {
+    content: "mm";
+}
+.unit.micrometer::after {
+    content: "um";
+}
+.unit.nanometer::after {
+    content: "nm";
+}
+.unit.picometer::after {
+    content: "pm";
+}
+
+// hertz
+.unit.hertz::after {
+    content: "Hz";
+}
+.unit.kilohertz::after {
+    content: "kHz";
+}
+.unit.megahertz::after {
+    content: "MHz";
+}
+.unit.gigahertz::after {
+    content: "GHz";
+}
+
+
+// special images
 
 .hoverswitch {
     display: flex;
